@@ -25,7 +25,7 @@
 <script>
     const {topic, publishRoute} = JSON.parse(document.getElementById('config').textContent);
 
-    const subscribeURL = new URL('http://localhost:9090/hub');
+    const subscribeURL = new URL('http://localhost:9090/.well-known/mercure');
     subscribeURL.searchParams.append('topic', topic);
 
     const es = new EventSource(subscribeURL);
